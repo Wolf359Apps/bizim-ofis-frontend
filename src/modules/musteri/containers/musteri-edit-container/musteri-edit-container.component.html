@@ -1,0 +1,31 @@
+<p-fieldset legend="Edit">
+
+	<div *ngIf="musteri$ | async as musteri else nodata">
+
+		<div class="p-fieldset-legend fieldset-right">
+			<button pButton
+					label="Cancel"
+					icon="fas fa-times"
+					[routerLink]="['/musteriler', musteri.id]"
+					class="p-button-text p-button-sm"></button>
+		</div>
+		<app-musteri-form [musteri]="musteri"
+					   (save)="onSave($event)"></app-musteri-form>
+
+	</div>
+	<ng-template #nodata>
+
+		<div class="p-fieldset-legend fieldset-right">
+			<button pButton
+					label="Go back"
+					icon="fas fa-undo-alt"
+					[routerLink]="['/musteriler']"
+					class="p-button-text p-button-sm"></button>
+		</div>
+		<div class="flex justify-content-between align-items-center">
+			No content to display
+		</div>
+
+	</ng-template>
+
+</p-fieldset>

@@ -1,0 +1,6 @@
+<p-breadcrumb [model]="[
+	{ label: 'Home', routerLink: '/' },
+	{ label: 'Saatler', routerLink: '/saatler' },
+	{ label: 'Saat', routerLink: ['/saatler', (id$ | async)] }
+]"></p-breadcrumb>
+<app-saat-edit-container></app-saat-edit-container>

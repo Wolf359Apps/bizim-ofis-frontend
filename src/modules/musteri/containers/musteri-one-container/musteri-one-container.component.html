@@ -1,0 +1,43 @@
+<p-fieldset legend="Musteri">
+
+	<div *ngIf="musteri$ | async as musteri else nodata">
+
+		<div class="p-fieldset-legend fieldset-right">
+			<button *appHasRole="AuthRole.MUSTERI_DELETE"
+					pButton
+					#deleteBtn
+					label="Delete"
+					icon="fas fa-trash"
+					(click)="onDelete(musteri.id, deleteBtn)"
+					class="p-button-text p-button-danger p-button-sm"></button>
+			<button *appHasRole="AuthRole.MUSTERI_EDIT"
+					pButton
+					label="Edit"
+					icon="fas fa-edit"
+					[routerLink]="['/musteriler', musteri.id, 'edit']"
+					class="p-button-text p-button-sm ml-2"></button>
+			<button pButton
+					label="Refresh"
+					icon="fas fa-sync-alt"
+					(click)="onRefresh(musteri.id)"
+					class="p-button-text p-button-sm ml-2"></button>
+		</div>
+		<app-musteri-one [musteri]="musteri$ | async"></app-musteri-one>
+
+	</div>
+	<ng-template #nodata>
+
+		<div class="p-fieldset-legend fieldset-right">
+			<button pButton
+					label="Go back"
+					icon="fas fa-undo-alt"
+					[routerLink]="['/musteriler']"
+					class="p-button-text p-button-sm"></button>
+		</div>
+		<div class="flex justify-content-between align-items-center">
+			No content to display
+		</div>
+
+	</ng-template>
+
+</p-fieldset>

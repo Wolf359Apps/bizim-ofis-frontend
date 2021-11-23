@@ -1,0 +1,6 @@
+<p-breadcrumb [model]="[
+	{ label: 'Home', routerLink: '/' },
+	{ label: 'Masraflar', routerLink: '/masraflar' },
+	{ label: 'Masraf', routerLink: ['/masraflar', (id$ | async)] }
+]"></p-breadcrumb>
+<app-masraf-edit-container></app-masraf-edit-container>

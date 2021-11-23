@@ -1,0 +1,18 @@
+<p-fieldset legend="Saatler">
+
+	<div class="p-fieldset-legend fieldset-right">
+		<button *appHasRole="AuthRole.SAAT_ADD"
+				pButton
+				routerLink="/saatler/new"
+				label="New Saat"
+				icon="fas fa-plus"
+				class="p-button-text p-button-sm"></button>
+		<button pButton
+				label="Refresh"
+				icon="fas fa-sync-alt"
+				(click)="onRefresh()"
+				class="p-button-text p-button-sm ml-2"></button>
+	</div>
+	<app-saat-list [saatler]="saatler$ | async"></app-saat-list>
+
+</p-fieldset>

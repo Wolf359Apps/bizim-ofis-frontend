@@ -1,0 +1,34 @@
+<p-table [value]="saatler || []"
+		 styleClass="p-datatable-striped"
+		 [responsive]="true"
+		 selectionMode="single">
+	<ng-template pTemplate="header">
+		<tr>
+			<th>name</th>
+			<th>sure</th>
+			<th>baslangic</th>
+			<th>bitis</th>
+			<th>aciklama</th>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="body"
+				 let-saat>
+		<tr routerLink="/saatler/{{ saat.id }}" [pSelectableRow]="saat">
+                <td><span class="p-column-title">Name</span>{{ saat.name }}</td>
+                <td><span class="p-column-title">Sure</span>{{ saat.sure }}</td>
+                <td><span class="p-column-title">Baslangic</span>{{ saat.baslangic }}</td>
+                <td><span class="p-column-title">Bitis</span>{{ saat.bitis }}</td>
+                <td><span class="p-column-title">Aciklama</span>{{ saat.aciklama }}</td>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="emptymessage"
+				 let-columns>
+		<tr>
+			<td [attr.colspan]="5">
+				<div class="flex align-items-center justify-content-center">
+					No content to display
+				</div>
+			</td>
+		</tr>
+	</ng-template>
+</p-table>

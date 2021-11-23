@@ -1,0 +1,43 @@
+<p-fieldset legend="Masraf">
+
+	<div *ngIf="masraf$ | async as masraf else nodata">
+
+		<div class="p-fieldset-legend fieldset-right">
+			<button *appHasRole="AuthRole.MASRAF_DELETE"
+					pButton
+					#deleteBtn
+					label="Delete"
+					icon="fas fa-trash"
+					(click)="onDelete(masraf.id, deleteBtn)"
+					class="p-button-text p-button-danger p-button-sm"></button>
+			<button *appHasRole="AuthRole.MASRAF_EDIT"
+					pButton
+					label="Edit"
+					icon="fas fa-edit"
+					[routerLink]="['/masraflar', masraf.id, 'edit']"
+					class="p-button-text p-button-sm ml-2"></button>
+			<button pButton
+					label="Refresh"
+					icon="fas fa-sync-alt"
+					(click)="onRefresh(masraf.id)"
+					class="p-button-text p-button-sm ml-2"></button>
+		</div>
+		<app-masraf-one [masraf]="masraf$ | async"></app-masraf-one>
+
+	</div>
+	<ng-template #nodata>
+
+		<div class="p-fieldset-legend fieldset-right">
+			<button pButton
+					label="Go back"
+					icon="fas fa-undo-alt"
+					[routerLink]="['/masraflar']"
+					class="p-button-text p-button-sm"></button>
+		</div>
+		<div class="flex justify-content-between align-items-center">
+			No content to display
+		</div>
+
+	</ng-template>
+
+</p-fieldset>

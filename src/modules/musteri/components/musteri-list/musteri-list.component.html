@@ -1,0 +1,34 @@
+<p-table [value]="musteriler || []"
+		 styleClass="p-datatable-striped"
+		 [responsive]="true"
+		 selectionMode="single">
+	<ng-template pTemplate="header">
+		<tr>
+			<th>name</th>
+			<th>title</th>
+			<th>birthdate</th>
+			<th>mobile</th>
+			<th>phone</th>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="body"
+				 let-musteri>
+		<tr routerLink="/musteriler/{{ musteri.id }}" [pSelectableRow]="musteri">
+                <td><span class="p-column-title">Name</span>{{ musteri.name }}</td>
+                <td><span class="p-column-title">Title</span>{{ musteri.title }}</td>
+                <td><span class="p-column-title">Birthdate</span>{{ musteri.birthdate }}</td>
+                <td><span class="p-column-title">Mobile</span>{{ musteri.mobile }}</td>
+                <td><span class="p-column-title">Phone</span>{{ musteri.phone }}</td>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="emptymessage"
+				 let-columns>
+		<tr>
+			<td [attr.colspan]="5">
+				<div class="flex align-items-center justify-content-center">
+					No content to display
+				</div>
+			</td>
+		</tr>
+	</ng-template>
+</p-table>

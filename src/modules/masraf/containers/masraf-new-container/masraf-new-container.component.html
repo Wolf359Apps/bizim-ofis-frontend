@@ -1,0 +1,16 @@
+<p-fieldset legend="New">
+
+	<div>
+
+		<div class="p-fieldset-legend fieldset-right">
+			<button pButton
+					label="Cancel"
+					icon="fas fa-times"
+					[routerLink]="['/masraflar']"
+					class="p-button-text p-button-sm"></button>
+		</div>
+		<app-masraf-form (save)="onSave($event)"></app-masraf-form>
+
+	</div>
+
+</p-fieldset>

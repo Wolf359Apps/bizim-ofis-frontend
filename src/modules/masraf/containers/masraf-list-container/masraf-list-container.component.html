@@ -1,0 +1,18 @@
+<p-fieldset legend="Masraflar">
+
+	<div class="p-fieldset-legend fieldset-right">
+		<button *appHasRole="AuthRole.MASRAF_ADD"
+				pButton
+				routerLink="/masraflar/new"
+				label="New Masraf"
+				icon="fas fa-plus"
+				class="p-button-text p-button-sm"></button>
+		<button pButton
+				label="Refresh"
+				icon="fas fa-sync-alt"
+				(click)="onRefresh()"
+				class="p-button-text p-button-sm ml-2"></button>
+	</div>
+	<app-masraf-list [masraflar]="masraflar$ | async"></app-masraf-list>
+
+</p-fieldset>

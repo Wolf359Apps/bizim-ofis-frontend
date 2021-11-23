@@ -1,0 +1,6 @@
+<p-breadcrumb [model]="[
+	{ label: 'Home', routerLink: '/' },
+	{ label: 'Musteriler', routerLink: '/musteriler' },
+	{ label: 'Musteri', routerLink: ['/musteriler', (id$ | async)] }
+]"></p-breadcrumb>
+<app-musteri-edit-container></app-musteri-edit-container>

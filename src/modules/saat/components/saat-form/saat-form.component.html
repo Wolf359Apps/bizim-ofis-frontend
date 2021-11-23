@@ -1,0 +1,71 @@
+<form [formGroup]="form">
+
+	<div class="p-fluid formgrid">
+
+    		<div class="field">
+
+			<label for="name">name</label>
+                    <input id="name"
+                                       type="text"
+                                       pInputText
+                                       formControlName="name">
+			<small *ngIf="form.controls.name.invalid && form.controls.name.dirty"
+				   class="p-error">Name is not available.</small>
+
+		</div>
+		<div class="field">
+
+			<label for="sure">sure</label>
+                    <input id="sure"
+                                       type="text"
+                                       pInputText
+                                       formControlName="sure">
+			<small *ngIf="form.controls.sure.invalid && form.controls.sure.dirty"
+				   class="p-error">Sure is not available.</small>
+
+		</div>
+		<div class="field">
+
+			<label for="baslangic">baslangic</label>
+                    <p-calendar inputId="baslangic"
+                                formControlName="baslangic"
+                                [showTime]="true"></p-calendar>
+			<small *ngIf="form.controls.baslangic.invalid && form.controls.baslangic.dirty"
+				   class="p-error">Baslangic is not available.</small>
+
+		</div>
+		<div class="field">
+
+			<label for="bitis">bitis</label>
+                    <p-calendar inputId="bitis"
+                                formControlName="bitis"
+                                [showTime]="true"></p-calendar>
+			<small *ngIf="form.controls.bitis.invalid && form.controls.bitis.dirty"
+				   class="p-error">Bitis is not available.</small>
+
+		</div>
+		<div class="field">
+
+			<label for="aciklama">aciklama</label>
+                    <input id="aciklama"
+                                       type="text"
+                                       pInputText
+                                       formControlName="aciklama">
+			<small *ngIf="form.controls.aciklama.invalid && form.controls.aciklama.dirty"
+				   class="p-error">Aciklama is not available.</small>
+
+		</div>
+	</div>
+
+	<div class="flex">
+
+		<button pButton
+				label="Save"
+				[disabled]="form.pristine || form.invalid"
+				icon="fas fa-save"
+				(click)="onSave()"
+				class="p-button-raised ml-auto"></button>
+
+	</div>
+
+</form>

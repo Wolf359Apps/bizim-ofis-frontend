@@ -1,0 +1,179 @@
+<div class="p-fluid px-md-3">
+
+	<p-divider [align]="'left'"
+			   class="mt-4 m-2">
+		<div class="inline-flex align-items-center">
+			<i class="fas fa-shield-alt mr-2"></i>
+			<b>Users</b>
+		</div>
+	</p-divider>
+	<div class="button-grid">
+		<button pButton
+				type="button"
+				label="View"
+				class="p-button-outlined p-button-secondary"
+				[ngClass]="{'p-button-success': userRoles.includes(Role.AUTH_USER_VIEW), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.AUTH_USER_VIEW)}"
+				(click)="onRole(Role.AUTH_USER_VIEW)"
+				pTooltip="View users (+ details)"
+				tooltipPosition="top"></button>
+		<button pButton
+				type="button"
+				label="Add / Edit"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.AUTH_USER_EDIT), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.AUTH_USER_EDIT)}"
+				(click)="onRole(Role.AUTH_USER_EDIT)"
+				pTooltip="Edit user info"
+				tooltipPosition="top"></button>
+		<button pButton
+				type="button"
+				label="Manage"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.AUTH_USER_MANAGE), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.AUTH_USER_MANAGE)}"
+				(click)="onRole(Role.AUTH_USER_MANAGE)"
+				pTooltip="Grant/revoke roles, change account status, delete users"
+				tooltipPosition="top"></button>
+	</div>
+
+	<p-divider [align]="'left'"
+			   class="mt-4 m-2">
+		<div class="inline-flex align-items-center">
+			<i class="fas fa-shield-alt mr-2"></i>
+			<b>Codes</b>
+		</div>
+	</p-divider>
+	<div class="button-grid">
+		<button pButton
+				type="button"
+				label="View / Edit"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.CONSTANT_MANAGE), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.CONSTANT_MANAGE)}"
+                (click)="onRole(Role.CONSTANT_MANAGE)"
+				pTooltip="View and edit constants"
+				tooltipPosition="top"></button>
+	</div>
+
+	<p-divider [align]="'left'"
+			   class="mt-4 m-2">
+		<div class="inline-flex align-items-center">
+			<i class="fas fa-shield-alt mr-2"></i>
+			<b>Musteriler</b>
+		</div>
+	</p-divider>
+	<div class="button-grid">
+		<button pButton
+				type="button"
+				label="View"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.MUSTERI_VIEW), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.MUSTERI_VIEW)}"
+				(click)="onRole(Role.MUSTERI_VIEW)"
+				pTooltip="View musteriler (+ details)"
+				tooltipPosition="top"></button>
+		<button pButton
+				type="button"
+				label="Add"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.MUSTERI_ADD), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.MUSTERI_ADD)}"
+				(click)="onRole(Role.MUSTERI_ADD)"
+				pTooltip="Add a Musteri"
+				tooltipPosition="top"></button>
+		<button pButton
+				type="button"
+				label="Edit"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.MUSTERI_EDIT), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.MUSTERI_EDIT)}"
+				(click)="onRole(Role.MUSTERI_EDIT)"
+				pTooltip="Edit a Musteri"
+				tooltipPosition="top"></button>
+		<button pButton
+				type="button"
+				label="Delete"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.MUSTERI_DELETE), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.MUSTERI_DELETE)}"
+				(click)="onRole(Role.MUSTERI_DELETE)"
+				pTooltip="Delete a Musteri"
+				tooltipPosition="top"></button>
+	</div>
+	<p-divider [align]="'left'"
+			   class="mt-4 m-2">
+		<div class="inline-flex align-items-center">
+			<i class="fas fa-shield-alt mr-2"></i>
+			<b>Saatler</b>
+		</div>
+	</p-divider>
+	<div class="button-grid">
+		<button pButton
+				type="button"
+				label="View"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.SAAT_VIEW), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.SAAT_VIEW)}"
+				(click)="onRole(Role.SAAT_VIEW)"
+				pTooltip="View saatler (+ details)"
+				tooltipPosition="top"></button>
+		<button pButton
+				type="button"
+				label="Add"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.SAAT_ADD), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.SAAT_ADD)}"
+				(click)="onRole(Role.SAAT_ADD)"
+				pTooltip="Add a Saat"
+				tooltipPosition="top"></button>
+		<button pButton
+				type="button"
+				label="Edit"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.SAAT_EDIT), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.SAAT_EDIT)}"
+				(click)="onRole(Role.SAAT_EDIT)"
+				pTooltip="Edit a Saat"
+				tooltipPosition="top"></button>
+		<button pButton
+				type="button"
+				label="Delete"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.SAAT_DELETE), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.SAAT_DELETE)}"
+				(click)="onRole(Role.SAAT_DELETE)"
+				pTooltip="Delete a Saat"
+				tooltipPosition="top"></button>
+	</div>
+	<p-divider [align]="'left'"
+			   class="mt-4 m-2">
+		<div class="inline-flex align-items-center">
+			<i class="fas fa-shield-alt mr-2"></i>
+			<b>Masraflar</b>
+		</div>
+	</p-divider>
+	<div class="button-grid">
+		<button pButton
+				type="button"
+				label="View"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.MASRAF_VIEW), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.MASRAF_VIEW)}"
+				(click)="onRole(Role.MASRAF_VIEW)"
+				pTooltip="View masraflar (+ details)"
+				tooltipPosition="top"></button>
+		<button pButton
+				type="button"
+				label="Add"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.MASRAF_ADD), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.MASRAF_ADD)}"
+				(click)="onRole(Role.MASRAF_ADD)"
+				pTooltip="Add a Masraf"
+				tooltipPosition="top"></button>
+		<button pButton
+				type="button"
+				label="Edit"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.MASRAF_EDIT), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.MASRAF_EDIT)}"
+				(click)="onRole(Role.MASRAF_EDIT)"
+				pTooltip="Edit a Masraf"
+				tooltipPosition="top"></button>
+		<button pButton
+				type="button"
+				label="Delete"
+				class=""
+				[ngClass]="{'p-button-success': userRoles.includes(Role.MASRAF_DELETE), 'p-button-outlined p-button-secondary': !userRoles.includes(Role.MASRAF_DELETE)}"
+				(click)="onRole(Role.MASRAF_DELETE)"
+				pTooltip="Delete a Masraf"
+				tooltipPosition="top"></button>
+	</div>
+
+</div>
