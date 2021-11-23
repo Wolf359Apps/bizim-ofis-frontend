@@ -48,4 +48,6 @@ jobs:
         with:
           name: deploy_coverage
           path: coverage
-        
+      - name: Build the Docker image
+        if: success()
+        run: docker build . --file Dockerfile --tag bizim-ofis-frontend:$(date +%s)
