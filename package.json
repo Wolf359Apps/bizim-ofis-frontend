@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "build:ci": "ng build --prod --sourceMap=false --base-href /bizim-ofis-frontend/",
-    "test:ci": "ng test --watch=false --code-coverage --source-map true"
+    "test:ci": "ng test --watch=false --code-coverage --source-map true --browsers=ChromeHeadlessCustom"
   },
   "private": true,
   "dependencies": {
@@ -60,6 +60,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "puppeteer": "^11.0.0",
     "typescript": "~4.3.5"
   }
 }
